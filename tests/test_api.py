@@ -1,6 +1,12 @@
 import pytest
 import sys
 import os
+
+os.environ["LLM_API_KEY"] = "mock_key"
+os.environ["GROQ_API_KEY"] = "mock_key"
+os.environ["LLM_MODEL"] = "mock_model"
+os.environ["LLM_VISION_MODEL"] = "mock_vision_model"
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi.testclient import TestClient
