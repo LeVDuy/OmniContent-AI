@@ -19,7 +19,7 @@ const INPUT_TABS = [
   { key: "image", label: "Image", icon: ImageIcon },
 ] as const;
 
-const API_URL = "http://127.0.0.1:8000/api/generate_content";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api/generate_content";
 
 export default function Home() {
   const [inputType, setInputType] = useState("text");

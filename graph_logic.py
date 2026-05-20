@@ -127,7 +127,7 @@ def writer_node(state: ContentCreationState):
         f"the target audience and brand voice above. If a CTA is specified, "
         f"weave it naturally into the content."
     )
-    user_prompt = f"Write content about: '{topic}' using the following reference material:\n{clean_context}"
+    user_prompt = f"Write content about: '{topic}'"
 
     if clean_context:
         user_prompt += f"\n\nREFERENCE MATERIAL:\n{clean_context}"
@@ -203,8 +203,8 @@ def editor_node(state: ContentCreationState):
 
 
 def routing_logic(state: ContentCreationState):
-    if state["is_approved"] == True : return "finish"
-    elif state["iteration"] >= 3 : return "finish"
+    if state["is_approved"]: return "finish"
+    elif state["iteration"] >= 3: return "finish"
     else: return "rewrite"
 
 
